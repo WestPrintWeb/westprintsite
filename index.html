@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -23,17 +23,37 @@
         z-index: 9999 !important;
       }
       /* Compensar o espaco do header fixo no conteudo principal */
-      header.relative.z-30 ~ *,
+      header.relative.z-30 + main,
       header.relative.z-30 + * {
-        padding-top: 72px;
-      }
-      #root > div > *:nth-child(2) {
         padding-top: 72px;
       }
 
       /* Botao flutuante WhatsApp - icone oficial */
       a[aria-label="Conversar pelo WhatsApp"] {
-        position: relative !important;
+        position: fixed !important;
+        bottom: 24px !important;
+        right: 24px !important;
+        left: auto !important;
+        top: auto !important;
+        width: 56px !important;
+        height: 56px !important;
+        min-width: 56px !important;
+        max-width: 56px !important;
+        min-height: 56px !important;
+        max-height: 56px !important;
+        aspect-ratio: 1 / 1 !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        z-index: 99999 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        transform: none;
+      }
+      a[aria-label="Conversar pelo WhatsApp"]:hover {
+        transform: translateY(-4px) !important;
       }
       a[aria-label="Conversar pelo WhatsApp"] svg {
         display: none !important;
@@ -41,8 +61,8 @@
       a[aria-label="Conversar pelo WhatsApp"]::after {
         content: "";
         display: block;
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Cpath fill=%22%23ffffff%22 d=%22M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.494 2.028 7.808L0 32l8.418-2.004A15.934 15.934 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.77-1.852l-.486-.289-5.002 1.193 1.218-4.876-.318-.5A13.267 13.267 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.942c-.398-.2-2.355-1.162-2.72-1.295-.366-.133-.633-.2-.9.2-.266.398-1.033 1.295-1.266 1.561-.233.266-.466.3-.864.1-.4-.2-1.686-.622-3.212-1.983-1.187-1.059-1.988-2.367-2.221-2.765-.233-.4-.025-.616.175-.815.18-.18.4-.466.6-.7.2-.233.266-.4.4-.666.133-.266.066-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.324-.778-.653-.673-.9-.685l-.766-.013c-.266 0-.7.1-1.066.5-.366.398-1.4 1.367-1.4 3.334s1.433 3.867 1.633 4.133c.2.267 2.82 4.306 6.832 6.034.955.412 1.7.659 2.281.844.958.305 1.831.262 2.52.159.769-.115 2.355-.963 2.688-1.893.333-.93.333-1.727.233-1.893-.099-.166-.366-.266-.764-.466z%22/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-size: contain;
